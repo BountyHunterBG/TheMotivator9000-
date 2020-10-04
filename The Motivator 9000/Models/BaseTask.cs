@@ -2,7 +2,7 @@
 
 namespace The_Motivator_9000.Models
 {
-    public abstract class BaseTask : ITask
+    public abstract class BaseTask : BaseNotifyPropertyChanged, ITask
     {
         protected string name;
         protected string description;

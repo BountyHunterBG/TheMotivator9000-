@@ -1,6 +1,6 @@
 ﻿namespace The_Motivator_9000.Interfaces
 {
-    interface ITask
+    public interface ITask
     {
         public string Name { get; set; }
 

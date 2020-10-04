@@ -1,0 +1,66 @@
+﻿<Page x:Class="The_Motivator_9000.Views.MainPageView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:The_Motivator_9000.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+            <ItemsControl Name="TaskList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Border BorderBrush="Crimson" BorderThickness="1" Margin="2" MinWidth="600" HorizontalAlignment="Left">
+                                <Grid>
+                                    
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <StackPanel Grid.Column="0" HorizontalAlignment="Left">
+
+                                        <TextBlock Text="{Binding Name}" 
+                                               FontSize="30"
+                                               FontWeight="DemiBold"
+                                               Margin="1"/>
+                                        <TextBlock Text="{Binding Description}" 
+                                               FontSize="15"
+                                               FontWeight="Light"
+                                               Margin="2"/>
+                                        <TextBlock Text="{Binding Streak}" 
+                                               FontSize="10"
+                                               Margin="2"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                        <Button Grid.Column="1" Width="40" Height="40" Margin="2">
+                                            <Image Source="D:\Projects\The Motivator 9000\The Motivator 9000\Images\edit.png" Margin="2"/>
+                                        </Button>
+
+                                        <Button Grid.Column="2" Width="40" Height="40" Margin="2">
+                                            <Image Source="D:\Projects\The Motivator 9000\The Motivator 9000\Images\recycling-bin.png" Margin="2"/>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Button x:Name="NewTaskButton"
+                Content="Add Task"
+                FontSize="25"
+                FontWeight="Bold"
+                Height="80" Width="150"
+                Margin="30"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Click="OpenTaskCreator"/>
+    </Grid>
+</Page>
